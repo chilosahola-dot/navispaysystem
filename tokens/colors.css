@@ -1,0 +1,52 @@
+:root {
+  /* Brand */
+  --nv-navy: #0F1F3D;
+  --nv-navy-hover: #1C3461;
+  --nv-navy-active: #0A1730;
+  --nv-teal: #00D8B5;
+  --nv-teal-bright: #00ECC7;
+  --nv-teal-hover: #10B99A;
+  --nv-teal-dark: #00747C;
+
+  /* Semantic - light band */
+  --nv-bg: #F3F3F3;
+  --nv-surface: #FDFDFD;
+  --nv-text: #0F172A;
+  --nv-muted: #64748B;
+  --nv-border: #D8DDE6;
+  --nv-fill: #ECEDEF;
+  --nv-disabled: #E4E7EC;
+  --nv-placeholder: #9AA6B8;
+
+  /* Semantic - dark band (re-pointed under .band-dark / .shell-dark) */
+  --nv-dark-bg: #0F1F3D;
+  --nv-dark-text: #F1F5F9;
+  --nv-dark-muted: #94A3B8;
+  --nv-dark-border: rgba(243,243,243,.14);
+
+  /* Payment status */
+  --nv-settled: #00747C;
+  --nv-in-flight: #1B6CA8;
+  --nv-scheduled: #3F3D8C;
+  --nv-review-bg: #FBF1E4; --nv-review-ink: #7C4212;
+  --nv-failed-bg: #FCEEEE; --nv-failed-ink: #B91C1C;
+  --nv-draft-bg: #E7E9ED; --nv-draft-ink: #0F1F3D;
+
+  /* Alert */
+  --nv-error: #B91C1C;
+  --nv-warning: #B45309;
+  --nv-info: #1B6CA8;
+  --nv-success: #17795F;
+
+  --hair: #E2E5EA;
+  --hair-soft: #EDEEF1;
+}
+
+/* Dark band re-point: apply .band-dark to any container to swap the
+   semantic tokens beneath it. Component markup never changes. */
+.band-dark {
+  background: var(--nv-dark-bg); color: var(--nv-dark-text);
+  --nv-text: #F1F5F9; --nv-muted: #94A3B8; --nv-border: rgba(243,243,243,.14);
+  --nv-surface: rgba(243,243,243,.04); --nv-fill: rgba(243,243,243,.06);
+  --nv-teal-dark: #00D8B5;
+}

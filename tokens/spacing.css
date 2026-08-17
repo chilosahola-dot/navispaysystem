@@ -1,0 +1,26 @@
+:root {
+  /* Radius - surfaces are square. 0 is the rule, not the exception. */
+  --nv-r-0: 0;
+  --nv-r-btn: 4px;   /* buttons and button-shaped controls only */
+  --nv-r-pill: 100px; /* status pills, badges, switch, avatars (as 50%) */
+
+  /* Spacing - 4px grid */
+  --nv-s-1: 4px; --nv-s-2: 8px; --nv-s-3: 12px; --nv-s-4: 16px;
+  --nv-s-5: 20px; --nv-s-6: 24px; --nv-s-8: 32px; --nv-s-10: 40px;
+
+  /* Control metrics */
+  --nv-h-sm: 40px;   /* default button / chip */
+  --nv-h-lg: 48px;   /* large button */
+  --nv-h-field: 48px; /* text input */
+  --nv-h-filter: 40px; /* dropdown */
+  --nv-h-tab: 48px;
+  --nv-h-row: 60px;  /* table row */
+  --nv-h-head: 44px; /* table header */
+
+  /* App shell */
+  --nv-sidebar-w: 212px;
+  --nv-sidebar-mini: 64px;
+  --nv-header-h: 68px;
+  --nv-maxw: 1440px;
+  --nv-gutter: clamp(20px, 6vw, 120px);
+}
