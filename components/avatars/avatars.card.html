@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="700x160" subtitle="3 sizes, stack" name="Avatars" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./avatars.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;gap:28px;align-items:center" id="root"></div>
+<script type="text/babel">
+const { Avatar, AvatarStack } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment>
+    <Avatar size={32} initials="AO" />
+    <Avatar size={40} initials="AO" />
+    <Avatar size={60} initials="AO" />
+    <Avatar size={40} tone="teal" initials="MK" />
+    <AvatarStack>
+      <Avatar size={32} initials="AO" />
+      <Avatar size={32} tone="teal" initials="MK" />
+      <Avatar size={32} tone="quiet" initials="+4" />
+    </AvatarStack>
+  </React.Fragment>
+);
+</script>

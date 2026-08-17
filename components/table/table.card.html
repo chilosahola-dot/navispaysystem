@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x320" subtitle="Header 44 / row 60, mono amounts" name="Table" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./table.css">
+<link rel="stylesheet" href="../pills/pills.css">
+<link rel="stylesheet" href="../avatars/avatars.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:0;font-family:var(--nv-font);background:var(--nv-surface)" id="root"></div>
+<script type="text/babel">
+const { Table, Pill, Avatar } = window.NavisPay;
+const rows = [
+  { id:1, ref:'PMT-40921', name:'Meridian Freight', init:'MF', status:'settled', amount:'412,000.00' },
+  { id:2, ref:'PMT-40922', name:'Kestrel Logistics', init:'KL', status:'in-flight', amount:'86,450.00' },
+  { id:3, ref:'PMT-40923', name:'Nordwind Agri', init:'NA', status:'review', amount:'1,204,900.00' },
+];
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Table rows={rows} columns={[
+    { key:'ref', label:'Reference', sortable:true, render:r=><code>{r.ref}</code> },
+    { key:'name', label:'Beneficiary', render:r=><span className="cell-in"><Avatar size={32} initials={r.init} />{r.name}</span> },
+    { key:'status', label:'Status', render:r=><Pill status={r.status}>{r.status}</Pill> },
+    { key:'amount', label:'Amount', align:'right' },
+  ]} />
+);
+</script>

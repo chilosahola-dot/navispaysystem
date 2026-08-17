@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" viewport="700x260" subtitle="Status pills, chips, badges" name="Pills, chips & badges" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./pills.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;flex-direction:column;gap:16px" id="root"></div>
+<script type="text/babel">
+const { Pill, Chip, Badge, BadgeAnchor, Icon } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment>
+    <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
+      <Pill status="settled">Settled</Pill>
+      <Pill status="in-flight">In flight</Pill>
+      <Pill status="scheduled">Scheduled</Pill>
+      <Pill status="review">In review</Pill>
+      <Pill status="failed">Failed</Pill>
+      <Pill status="draft">Draft</Pill>
+    </div>
+    <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
+      <Pill status="settled" solid>Settled</Pill>
+      <Pill status="in-flight" solid>In flight</Pill>
+      <Chip selected>EUR</Chip>
+      <Chip>USD</Chip>
+      <Chip removable>GBP</Chip>
+    </div>
+    <div style={{display:'flex',gap:28,alignItems:'center'}}>
+      <BadgeAnchor count={7}><Icon name="bell" size={24} /></BadgeAnchor>
+      <Badge>Live network</Badge>
+    </div>
+  </React.Fragment>
+);
+</script>

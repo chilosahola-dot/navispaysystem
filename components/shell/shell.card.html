@@ -1,0 +1,75 @@
+<!-- @dsCard group="App Shell" viewport="1400x760" subtitle="Ledger dashboard, light band" name="App shell -- Ledger (light)" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./shell.css">
+<link rel="stylesheet" href="../buttons/buttons.css">
+<link rel="stylesheet" href="../forms/fields.css">
+<link rel="stylesheet" href="../dropdown/dropdown.css">
+<link rel="stylesheet" href="../pills/pills.css">
+<link rel="stylesheet" href="../avatars/avatars.css">
+<link rel="stylesheet" href="../table/table.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:16px;background:var(--nv-bg)" id="root"></div>
+<script type="text/babel">
+const { AppShell, Sidebar, Header, StatCard, PlatformCard, QueueList, Table, Pill, Avatar, Button, SegmentedControl, Dropdown, Filter } = window.NavisPay;
+const groups = [
+  { label:'Operate', items:[
+    { label:'Ledger', icon:'ledger', active:true, count:24, sub:[{label:'All payments',active:true},{label:'In flight'},{label:'In review'},{label:'Failed'}] },
+    { label:'Balances', icon:'wallet' }, { label:'Corridors', icon:'globe' } ]},
+  { label:'Manage', items:[
+    { label:'Beneficiaries', icon:'user' }, { label:'Settings', icon:'settings' }, { label:'Support', icon:'info' } ]},
+];
+const rows = [
+  { id:1, ref:'PMT-40921', name:'Meridian Freight', init:'MF', tone:undefined, status:'settled', amount:'412,000.00' },
+  { id:2, ref:'PMT-40922', name:'Kestrel Logistics', init:'KL', tone:'teal', status:'in-flight', amount:'86,450.00' },
+  { id:3, ref:'PMT-40923', name:'Nordwind Agri', init:'NA', tone:'quiet', status:'review', amount:'1,204,900.00' },
+  { id:4, ref:'PMT-40924', name:'Saltire Holdings', init:'SH', tone:undefined, status:'scheduled', amount:'55,120.00' },
+];
+const pts = [{x:0,y:26},{x:15,y:24},{x:30,y:27},{x:45,y:18},{x:60,y:20},{x:75,y:12},{x:90,y:15},{x:105,y:7},{x:120,y:4}];
+function Dashboard() {
+  const [range, setRange] = React.useState('today');
+  return (
+    <AppShell
+      sidebar={<Sidebar groups={groups} user={{initials:'AO',name:'Ada Okonjo',email:'ada@meridian.co'}} />}
+      header={<Header crumbs={[{label:'Operate'},{label:'Ledger'}]} notifications={7} />}
+    >
+      <div className="page-head">
+        <div>
+          <h3 className="page-title">Ledger <span className="ref">EUR &rarr; SGD</span></h3>
+          <p className="page-sub">Every payment routed today, with its settlement state and reconciliation record.</p>
+        </div>
+        <div style={{display:'flex',gap:12}}>
+          <Button variant="ghost" icon="download" iconPosition="leading">Export</Button>
+          <Button variant="cta">Send payment</Button>
+        </div>
+      </div>
+      <div style={{display:'flex',justifyContent:'space-between',marginBottom:20}}>
+        <SegmentedControl value={range} onChange={setRange} options={[{value:'today',label:'Today'},{value:'7d',label:'7 days'},{value:'30d',label:'30 days'}]} />
+        <Filter label="" orientation="inline"><Dropdown placeholder="All statuses" /></Filter>
+      </div>
+      <div className="three" style={{marginBottom:20, display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14}}>
+        <StatCard icon="check" label="Settled today" value="$4,812,900" delta="+12% vs. plan" points={pts} />
+        <StatCard icon="refresh" label="Avg. time" value="6.4s" delta="-0.8s vs. last week" points={pts} />
+        <StatCard icon="alert" label="In review" value="3" delta="+2 since 09:00" deltaDown points={pts} />
+      </div>
+      <div className="body-cols" style={{display:'grid',gridTemplateColumns:'minmax(0,1fr) 288px',gap:20}}>
+        <PlatformCard title="Recent payments">
+          <Table rows={rows} columns={[
+            { key:'ref', label:'Reference', render:r=><code>{r.ref}</code> },
+            { key:'name', label:'Beneficiary', render:r=><span className="cell-in"><Avatar size={32} initials={r.init} tone={r.tone} />{r.name}</span> },
+            { key:'status', label:'Status', render:r=><Pill status={r.status}>{r.status}</Pill> },
+            { key:'amount', label:'Amount', align:'right' },
+          ]} />
+        </PlatformCard>
+        <PlatformCard title="Needs attention">
+          <QueueList rows={[
+            {name:'Nordwind Agri',amount:'1,204,900.00',reason:'Compliance review',age:'18m'},
+            {name:'Halden Marine',amount:'640,000.00',reason:'Threshold hold',age:'42m'},
+          ]} />
+        </PlatformCard>
+      </div>
+    </AppShell>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
+</script>

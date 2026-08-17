@@ -1,0 +1,24 @@
+/* ---- Selection controls ---- */
+.chk { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-size: 14px; color: var(--nv-text); }
+.chk-box { width: 18px; height: 18px; border: 1.5px solid var(--nv-muted); background: var(--nv-surface);
+  display: grid; place-items: center; flex: 0 0 auto; color: #F3F3F3; transition: background .12s, border-color .12s; }
+.chk[aria-checked="true"] .chk-box, .chk[aria-checked="mixed"] .chk-box { background: var(--nv-teal-dark); border-color: var(--nv-teal-dark); }
+.chk-box .i { width: 12px; height: 12px; stroke-width: 3; opacity: 0; }
+.chk[aria-checked="true"] .chk-box .i-check, .chk[aria-checked="mixed"] .chk-box .i-minus { opacity: 1; }
+.chk.is-disabled { color: var(--nv-placeholder); cursor: not-allowed; }
+.chk.is-disabled .chk-box { border-color: var(--nv-disabled); background: var(--nv-disabled); }
+.rad { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-size: 14px; color: var(--nv-text); }
+.rad-dot { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--nv-muted); background: var(--nv-surface); display: grid; place-items: center; flex: 0 0 auto; }
+.rad-dot::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--nv-teal-dark); transform: scale(0); transition: transform .12s; }
+.rad[aria-checked="true"] .rad-dot { border-color: var(--nv-teal-dark); }
+.rad[aria-checked="true"] .rad-dot::after { transform: scale(1); }
+.rad.is-disabled { color: var(--nv-placeholder); cursor: not-allowed; }
+.rad.is-disabled .rad-dot { border-color: var(--nv-disabled); }
+.sw-wrap { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-size: 14px; color: var(--nv-text); }
+.sw-track { position: relative; width: 40px; height: 20px; flex: 0 0 auto; }
+.sw-track::before { content: ""; position: absolute; inset: 0; border-radius: var(--nv-r-pill); background: var(--nv-border); transition: background .16s; }
+.sw-track::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--nv-surface); box-shadow: 0 1px 3px rgba(15,31,61,.3); transition: transform .16s; }
+.sw-wrap[aria-checked="true"] .sw-track::before { background: var(--nv-teal-dark); }
+.sw-wrap[aria-checked="true"] .sw-track::after { transform: translateX(20px); }
+.sw-wrap.is-disabled { color: var(--nv-placeholder); cursor: not-allowed; opacity: .6; }

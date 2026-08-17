@@ -1,0 +1,11 @@
+/* ---- Table ---- */
+.tbl { width: 100%; border-collapse: collapse; background: var(--nv-surface); font-family: var(--nv-font); }
+.tbl th { text-align: left; padding: 0 14px; height: 44px; font-family: var(--nv-mono); font-size: 8.5px;
+  font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: var(--nv-muted);
+  border-bottom: 1px solid var(--nv-border); white-space: nowrap; }
+.tbl th .th-in { display: inline-flex; align-items: center; gap: 8px; }
+.tbl td { padding: 14px; height: 60px; font-size: 14px; color: var(--nv-text); border-bottom: 1px solid var(--hair-soft); transition: background var(--nv-fast); }
+.tbl tbody tr:nth-child(even) td { background: rgba(15,31,61,.015); }
+.tbl tbody tr:hover td { background: rgba(0,216,181,.05); }
+.tbl td .cell-in { display: flex; align-items: center; gap: 10px; }
+.tbl .num { font-family: var(--nv-mono); font-variant-numeric: tabular-nums; text-align: right; }

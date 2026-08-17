@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="700x480" subtitle="6 variants, icon buttons, segmented" name="Buttons" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./buttons.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;flex-direction:column;gap:16px" id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, ButtonGroup, SegmentedControl } = window.NavisPay;
+function Demo() {
+  const [range, setRange] = React.useState('today');
+  const [pair, setPair] = React.useState('payments');
+  return (
+    <React.Fragment>
+      <div style={{display:'flex',gap:12,flexWrap:'wrap'}}>
+        <Button variant="primary">Primary</Button>
+        <Button variant="cta" icon="arrow-right">Send payment</Button>
+        <Button variant="accent">Accent</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="text">Text button</Button>
+        <Button variant="primary" size="lg">Large</Button>
+        <Button variant="primary" loading>Approve</Button>
+        <Button variant="primary" disabled>Approve</Button>
+      </div>
+      <div style={{display:'flex',gap:12,alignItems:'center'}}>
+        <IconButton icon="plus" label="Add" />
+        <IconButton icon="refresh" variant="ghost" label="Refresh" />
+        <IconButton icon="dots" variant="quiet" label="More" />
+        <ButtonGroup options={[{value:'payments',label:'Payments'},{value:'payouts',label:'Payouts'}]} value={pair} onChange={setPair} />
+        <SegmentedControl options={[{value:'today',label:'Today'},{value:'7d',label:'7 days'},{value:'30d',label:'30 days'}]} value={range} onChange={setRange} />
+      </div>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>

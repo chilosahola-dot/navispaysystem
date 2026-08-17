@@ -1,0 +1,11 @@
+/* ---- Links ---- */
+.lnk { font-family: var(--nv-font); cursor: pointer; text-decoration: none; position: relative;
+  border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: color var(--nv-fast), border-color var(--nv-fast); }
+.lnk-accent { color: var(--nv-teal-dark); font-weight: 500; }
+.lnk-accent:hover { color: var(--nv-navy); }
+.lnk-ink { color: var(--nv-text); font-weight: 400; border-color: var(--nv-border); }
+.lnk-ink:hover { border-color: var(--nv-teal-dark); color: var(--nv-teal-dark); }
+.lnk-quiet { color: var(--nv-muted); border-color: transparent; }
+.lnk-quiet:hover { color: var(--nv-teal-dark); border-color: currentColor; }
+.lnk-16 { font-size: 16px; } .lnk-14 { font-size: 14px; }
+.lnk.is-disabled { color: var(--nv-placeholder); border-color: var(--nv-disabled); cursor: not-allowed; }

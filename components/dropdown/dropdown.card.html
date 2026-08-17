@@ -1,0 +1,17 @@
+<!-- @dsCard group="Components" viewport="700x160" subtitle="Filter + dropdown trigger" name="Dropdown & filters" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./dropdown.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;gap:24px;align-items:flex-end" id="root"></div>
+<script type="text/babel">
+const { Filter, Dropdown } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment>
+    <Filter label="Corridor"><Dropdown value="EUR -> SGD" /></Filter>
+    <Filter label="Status" orientation="top"><Dropdown placeholder="All statuses" /></Filter>
+    <Filter label="Open" orientation="top"><Dropdown open value="Settled" /></Filter>
+    <Filter label="Disabled" orientation="top"><Dropdown disabled placeholder="Not available" /></Filter>
+  </React.Fragment>
+);
+</script>

@@ -1,0 +1,47 @@
+/* ---- Buttons ---- */
+.btn { font-family: var(--nv-font); font-size: 15px; font-weight: 600; line-height: 18px; letter-spacing: -.01em;
+  border: 1.5px solid transparent; border-radius: var(--nv-r-btn); height: 40px; padding: 0 22px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;
+  transition: background var(--nv-fast) var(--nv-ease), border-color var(--nv-fast) var(--nv-ease), box-shadow var(--nv-fast) var(--nv-ease), color var(--nv-fast), transform var(--nv-fast) var(--nv-ease); white-space: nowrap; }
+.btn:active { transform: translateY(1px); }
+.btn-lg { height: 48px; padding: 0 30px; font-size: 15px; }
+.btn-primary { background: var(--nv-navy); color: #F3F3F3; border-color: var(--nv-navy); }
+.btn-primary:hover { background: var(--nv-navy-hover); box-shadow: var(--nv-e-btn); }
+.btn-primary:active { background: var(--nv-navy-active); box-shadow: none; }
+.btn-cta { background: var(--nv-navy); color: #F3F3F3; border-color: var(--nv-navy); }
+.btn-cta:hover { background: var(--nv-teal-hover); border-color: var(--nv-teal-hover); box-shadow: var(--nv-e-cta); }
+.btn-accent { background: var(--nv-teal); color: var(--nv-navy); border-color: var(--nv-teal); }
+.btn-accent:hover { background: var(--nv-teal-bright); box-shadow: 0 4px 18px rgba(0,216,181,.38); }
+.btn-ghost { background: transparent; color: var(--nv-navy); border-color: var(--nv-navy); }
+.btn-ghost:hover { background: rgba(15,31,61,.06); }
+.btn-ghost-light { background: transparent; color: #F3F3F3; border-color: rgba(243,243,243,.35); }
+.btn-ghost-light:hover { border-color: rgba(243,243,243,.7); background: rgba(243,243,243,.07); }
+.btn-text { background: transparent; color: var(--nv-teal-dark); border-color: transparent; padding: 0 8px; }
+.btn-text:hover { color: var(--nv-navy); background: rgba(15,31,61,.05); }
+.btn[disabled], .btn.is-disabled { background: var(--nv-disabled); border-color: transparent; color: var(--nv-placeholder); cursor: not-allowed; box-shadow: none; }
+.btn-ghost[disabled] { background: transparent; border-color: var(--nv-disabled); color: var(--nv-placeholder); }
+.btn.is-loading { color: transparent; position: relative; pointer-events: none; }
+.btn.is-loading::after { content: ""; position: absolute; width: 15px; height: 15px; border-radius: 50%;
+  border: 2px solid rgba(243,243,243,.4); border-top-color: #F3F3F3; animation: nv-spin .7s linear infinite; }
+.btn-ghost.is-loading::after { border-color: rgba(15,31,61,.25); border-top-color: var(--nv-navy); }
+@keyframes nv-spin { to { transform: rotate(360deg); } }
+.btn-block { width: 100%; }
+.btn-icon { border-radius: var(--nv-r-btn); width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--nv-navy); background: var(--nv-navy); color: #F3F3F3; cursor: pointer;
+  transition: background var(--nv-fast) var(--nv-ease), color var(--nv-fast), border-color var(--nv-fast), transform var(--nv-fast); }
+.btn-icon:active { transform: translateY(1px); }
+.btn-icon-lg { width: 48px; height: 48px; }
+.btn-icon:hover { background: var(--nv-navy-hover); }
+.btn-icon-ghost { background: transparent; color: var(--nv-navy); }
+.btn-icon-ghost:hover { background: rgba(15,31,61,.06); }
+.btn-icon-quiet { background: transparent; border-color: var(--nv-border); color: var(--nv-muted); }
+.btn-icon-quiet:hover { border-color: var(--nv-teal-dark); color: var(--nv-teal-dark); background: transparent; }
+.btn-icon[disabled] { background: var(--nv-disabled); border-color: transparent; color: var(--nv-placeholder); cursor: not-allowed; }
+
+/* segmented */
+.dual { display: inline-flex; border: 1.5px solid var(--nv-navy); border-radius: var(--nv-r-btn); overflow: hidden; }
+.dual > button { font-family: var(--nv-font); font-size: 14px; font-weight: 600; padding: 0 20px; height: 38px;
+  background: transparent; color: var(--nv-navy); border: 0; border-left: 1.5px solid var(--nv-navy); cursor: pointer; white-space: nowrap; transition: background var(--nv-fast) var(--nv-ease), color var(--nv-fast); }
+.dual > button:first-child { border-left: 0; }
+.dual > button:hover:not([aria-pressed="true"]) { background: rgba(15,31,61,.06); }
+.dual > button[aria-pressed="true"] { background: var(--nv-navy); color: #F3F3F3; }

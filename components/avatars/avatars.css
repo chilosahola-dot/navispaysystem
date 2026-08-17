@@ -1,0 +1,10 @@
+/* ---- Avatars ---- */
+.av { border-radius: 50%; overflow: hidden; display: grid; place-items: center; flex: 0 0 auto;
+  font-family: var(--nv-font); font-weight: 600; color: #F3F3F3; background: var(--nv-navy); }
+.av-32 { width: 32px; height: 32px; font-size: 13px; } .av-40 { width: 40px; height: 40px; font-size: 16px; }
+.av-60 { width: 60px; height: 60px; font-size: 22px; }
+.av-teal { background: var(--nv-teal-dark); }
+.av-quiet { background: var(--nv-border); color: var(--nv-navy); }
+.av-stack { display: flex; }
+.av-stack .av { box-shadow: 0 0 0 2px var(--nv-surface); margin-left: -10px; }
+.av-stack .av:first-child { margin-left: 0; }

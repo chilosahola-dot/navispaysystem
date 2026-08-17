@@ -1,0 +1,29 @@
+/* ---- Menu / popover / tooltip ---- */
+.menu { background: var(--nv-surface); border: 1px solid var(--nv-border); box-shadow: var(--nv-e-float); padding: 6px 0; min-width: 200px; }
+.menu-item { position: relative; display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 16px; font-size: 14px; color: var(--nv-text); cursor: pointer; transition: background var(--nv-fast), color var(--nv-fast); }
+.menu-item::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--nv-teal); transform: scaleY(0); transition: transform var(--nv-fast) var(--nv-ease); }
+.menu-item:hover { background: var(--nv-fill); }
+.menu-item:hover::before { transform: scaleY(1); }
+.menu-item.is-selected { background: var(--nv-fill); color: var(--nv-teal-dark); }
+.menu-item.is-selected::before { transform: scaleY(1); }
+.menu-item.is-danger { color: var(--nv-error); }
+.menu-item.is-disabled { color: var(--nv-placeholder); cursor: not-allowed; background: transparent; }
+.menu-sep { height: 1px; background: var(--nv-border); margin: 6px 0; }
+.menu-label { padding: 8px 14px 6px; font-family: var(--nv-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--nv-placeholder); }
+.pop { background: var(--nv-surface); border: 1px solid var(--nv-border); padding: 10px 14px; max-width: 500px;
+  box-shadow: var(--nv-e-float); font-size: 13px; line-height: 1.6; color: var(--nv-text); }
+.pop b { display: block; font-weight: 700; }
+.pop-rich { padding: 16px; }
+.pop-rich .pop-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+.tt { position: relative; display: inline-flex; color: var(--nv-muted); cursor: help; }
+.tt > .pop { position: absolute; z-index: 5; width: max-content; max-width: 280px; opacity: 0; pointer-events: none; transition: opacity .12s; }
+.tt:hover > .pop, .tt:focus-within > .pop { opacity: 1; }
+.tt-down > .pop { top: calc(100% + 8px); left: 0; }
+.tt-up > .pop { bottom: calc(100% + 8px); left: 0; }
+.tt-right > .pop { left: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.tt-left > .pop { right: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 860px) {
+  .tt > .pop { max-width: min(260px, calc(100vw - 72px)); left: auto; right: 0; transform: none; }
+  .tt-right > .pop, .tt-left > .pop { top: calc(100% + 8px); bottom: auto; }
+}

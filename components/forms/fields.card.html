@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="700x340" subtitle="Text field, textarea, search, slider" name="Form fields" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./fields.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start" id="root"></div>
+<script type="text/babel">
+const { TextField, TextareaField, SearchField, Slider } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment>
+    <TextField label="Beneficiary name" placeholder="Ada Okonjo" help="As it appears on the receiving account." />
+    <TextField label="IBAN" defaultValue="GB29 NWBK 6016" error help="IBAN checksum failed." />
+    <TextField label="Locked" placeholder="Locked after submission" disabled />
+    <TextareaField label="Payment reference" placeholder="What is this payment for?" />
+    <div style={{width:300}}>
+      <SearchField />
+      <div style={{marginTop:18}}><Slider label="Monthly volume" min={0} max={100} defaultValue={42} /></div>
+    </div>
+  </React.Fragment>
+);
+</script>

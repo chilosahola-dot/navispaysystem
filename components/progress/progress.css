@@ -1,0 +1,21 @@
+/* ---- Stepper & progress ---- */
+.stepper { display: flex; align-items: flex-start; }
+.step { display: flex; align-items: flex-start; justify-content: flex-end; flex: 1 1 0; }
+.step:first-child { flex: 0 0 auto; }
+.step .conn { flex: 1 1 0; min-width: 24px; height: 16px; border-top: 1px solid var(--nv-border); margin-top: 9px; }
+.step:first-child .conn { display: none; }
+.step .node { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 18px; }
+.step .dot { width: 18px; height: 18px; border: 1.5px solid var(--nv-border); background: var(--nv-surface); box-sizing: border-box; }
+.step .cap { font-family: var(--nv-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--nv-muted); white-space: nowrap; }
+.step.is-done .conn, .step.is-current .conn { border-top-color: var(--nv-teal-dark); }
+.step.is-done .dot { background: var(--nv-teal-dark); border-color: var(--nv-teal-dark); }
+.step.is-current .dot { border-color: var(--nv-teal-dark); box-shadow: inset 0 0 0 3px var(--nv-surface), inset 0 0 0 9px var(--nv-teal-dark); }
+.step.is-current .cap { color: var(--nv-teal-dark); }
+.prog { height: 3px; overflow: hidden; background: var(--nv-border); }
+.prog > i { display: block; height: 100%; background: var(--nv-teal-dark); }
+.prog-teal > i { background: var(--nv-teal); }
+.prog-indet > i { width: 40%; animation: nv-indet 1.4s ease-in-out infinite; }
+@keyframes nv-indet { 0% { margin-left: -40%; } 100% { margin-left: 100%; } }
+.prog-knob { position: relative; height: 3px; background: var(--nv-border); }
+.prog-knob > i { display: block; height: 100%; background: var(--nv-navy); }
+.prog-knob .knob { position: absolute; top: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--nv-surface); border: 2px solid var(--nv-navy); transform: translate(-50%,-50%); }

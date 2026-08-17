@@ -1,0 +1,14 @@
+<!-- @dsCard group="Components" viewport="700x300" subtitle="27 outline icons, 24x24 grid" name="Icons" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:16px;font-family:var(--nv-font);background:var(--nv-bg)">
+  <div class="icon-grid" id="root"></div>
+</div>
+<script type="text/babel">
+const { Icon, ICON_NAMES } = window.NavisPay;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(ICON_NAMES.map(n => (
+  <div className="icon-cell" key={n}><Icon name={n} size={24} /><span>{n}</span></div>
+)));
+</script>

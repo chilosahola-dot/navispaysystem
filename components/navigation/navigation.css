@@ -1,0 +1,25 @@
+/* ---- Tabs / breadcrumbs / pagination ---- */
+.tabs { display: flex; border-bottom: 1px solid var(--nv-border); }
+.tabs > button { height: 48px; padding: 0 26px; border: 0; background: transparent; cursor: pointer; position: relative;
+  font-family: var(--nv-font); font-size: 14px; font-weight: 600; letter-spacing: -.01em; color: var(--nv-muted);
+  margin-bottom: -1px; transition: color var(--nv-fast) var(--nv-ease); }
+.tabs > button::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--nv-teal);
+  transform: scaleX(0); transition: transform var(--nv-base) var(--nv-ease); }
+.tabs > button:hover:not([disabled]) { color: var(--nv-navy); }
+.tabs > button[aria-selected="true"] { color: var(--nv-navy); }
+.tabs > button[aria-selected="true"]::after { transform: scaleX(1); box-shadow: 0 0 12px rgba(0,216,181,.55); }
+.tabs > button[disabled] { color: var(--nv-placeholder); cursor: not-allowed; }
+.tabs-page > button { padding: 0 0 0 0; margin-right: 32px; }
+.crumbs { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.crumbs a { color: var(--nv-muted); text-decoration: none; }
+.crumbs a:hover { color: var(--nv-teal-dark); }
+.crumbs .sep { color: var(--nv-placeholder); display: inline-flex; }
+.crumbs .cur { color: var(--nv-text); font-weight: 600; }
+.pager { display: flex; align-items: center; gap: 4px; }
+.pager button { min-width: 34px; height: 34px; padding: 0 8px; border: 1px solid transparent; background: transparent;
+  color: var(--nv-text); font-family: var(--nv-mono); font-size: 12px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.pager button:hover:not([disabled]):not([aria-current="page"]) { border-color: var(--nv-border); }
+.pager button[aria-current="page"] { background: var(--nv-navy); color: #F3F3F3; }
+.pager button[disabled] { color: var(--nv-placeholder); cursor: not-allowed; }
+.pager .gap { min-width: 24px; text-align: center; color: var(--nv-placeholder); }
+.pager-meta { font-family: var(--nv-mono); font-size: 11px; color: var(--nv-muted); }

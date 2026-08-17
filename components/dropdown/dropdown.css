@@ -1,0 +1,11 @@
+/* ---- Dropdown / filter ---- */
+.filter { display: flex; align-items: center; gap: 10px; width: 268px; max-width: 100%; }
+.filter.top { flex-direction: column; align-items: stretch; gap: 7px; }
+.filter-label { display: flex; align-items: center; gap: 8px; font-family: var(--nv-mono); font-size: 9px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--nv-muted); white-space: nowrap; }
+.dd { flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  height: 40px; padding: 0 14px; background: var(--nv-surface); border: 1px solid var(--nv-border);
+  font-size: 14px; color: var(--nv-text); cursor: pointer; transition: border-color var(--nv-fast) var(--nv-ease), box-shadow var(--nv-fast) var(--nv-ease); }
+.dd:hover { border-color: var(--nv-muted); }
+.dd.is-open, .dd:focus-visible { outline: none; border-color: var(--nv-teal-dark); box-shadow: var(--nv-ring); }
+.dd.is-disabled { color: var(--nv-placeholder); background: var(--nv-disabled); border-color: var(--nv-disabled); cursor: not-allowed; }

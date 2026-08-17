@@ -1,0 +1,8 @@
+/* ---- Icons ---- */
+.i { width: 20px; height: 20px; flex: 0 0 auto; stroke: currentColor; fill: none; stroke-width: 1.75;
+  stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: middle; }
+.i-16 { width: 16px; height: 16px; } .i-18 { width: 18px; height: 18px; } .i-24 { width: 24px; height: 24px; }
+.icon-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(104px,1fr)); gap: 4px; }
+.icon-cell { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px; color: var(--nv-navy); }
+.icon-cell:hover { background: var(--nv-bg); color: var(--nv-teal-dark); }
+.icon-cell span { font-family: var(--nv-mono); font-size: 10px; color: var(--nv-muted); text-align: center; }

@@ -1,0 +1,16 @@
+/* ---- Modal / dialog ---- */
+.scrim { background: var(--nv-scrim); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); padding: 32px; display: grid; place-items: center; }
+.modal { background: var(--nv-surface); border: 1px solid var(--nv-border); box-shadow: var(--nv-e-float);
+  width: 100%; max-width: 600px; display: flex; flex-direction: column; position: relative; }
+.modal-close { display: flex; justify-content: flex-end; padding: 16px 16px 0; }
+.modal-close button { border: 0; background: transparent; cursor: pointer; color: var(--nv-muted); display: inline-flex; padding: 0; }
+.modal-close button:hover { color: var(--nv-navy); }
+.modal-body { display: flex; flex-direction: column; gap: 24px; padding: 8px 40px 40px; }
+.modal-title { font-size: 26px; font-weight: 800; letter-spacing: -.025em; line-height: 1.2; color: var(--nv-navy); margin: 0; }
+.modal-text { font-size: 15px; line-height: 1.65; color: var(--nv-muted); margin: 0; }
+.modal-actions { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.dialog { background: var(--nv-surface); border: 1px solid var(--nv-border); box-shadow: var(--nv-e-float); width: 100%; max-width: 460px; }
+.dialog-inner { padding: 24px 24px 0; }
+.dialog h4 { font-size: 18px; font-weight: 800; letter-spacing: -.02em; color: var(--nv-navy); margin: 0 0 10px; }
+.dialog p { font-size: 14px; line-height: 1.6; color: var(--nv-muted); margin: 0; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 8px; padding: 20px 24px 20px; }

@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" viewport="700x220" subtitle="Checkbox, radio, switch" name="Selection controls" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./selection.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;flex-direction:column;gap:14px" id="root"></div>
+<script type="text/babel">
+const { Checkbox, Radio, Switch } = window.NavisPay;
+function Demo() {
+  const [c, setC] = React.useState(true);
+  const [r, setR] = React.useState('same-day');
+  const [s, setS] = React.useState(false);
+  return (
+    <React.Fragment>
+      <div style={{display:'flex',gap:20}}>
+        <Checkbox checked={false}>Unchecked</Checkbox>
+        <Checkbox checked={c} onChange={setC}>Checked</Checkbox>
+        <Checkbox indeterminate>Indeterminate</Checkbox>
+        <Checkbox disabled>Disabled</Checkbox>
+      </div>
+      <div style={{display:'flex',gap:20}}>
+        <Radio checked={r==='same-day'} onChange={() => setR('same-day')}>Same-day</Radio>
+        <Radio checked={r==='next'} onChange={() => setR('next')}>Next business day</Radio>
+      </div>
+      <div style={{display:'flex',gap:20}}>
+        <Switch checked={s} onChange={setS}>Auto-convert</Switch>
+        <Switch checked disabled>Locked by policy</Switch>
+      </div>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>

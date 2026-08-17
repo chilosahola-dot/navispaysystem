@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x420" subtitle="Modal and alert dialog" name="Modal & dialog" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./modal.css">
+<link rel="stylesheet" href="../buttons/buttons.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg)" id="root"></div>
+<script type="text/babel">
+const { Modal, AlertDialog, Button } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{display:'flex',flexDirection:'column',gap:16}}>
+    <Modal title="Confirm this payment" actions={<><Button variant="ghost">Back</Button><Button variant="cta">Confirm and send</Button></>}>
+      <p className="modal-text">You are sending <strong style={{color:'var(--nv-text)'}}>€412,000.00</strong> to Meridian Freight Pte Ltd. Settlement is final once the ledger clears.</p>
+    </Modal>
+    <AlertDialog title="Discard this batch?" description="84 unsent payments will be removed. This cannot be undone." actions={<><Button variant="text">Keep editing</Button><Button variant="primary" style={{background:'var(--nv-error)',borderColor:'var(--nv-error)'}}>Discard</Button></>} />
+  </div>
+);
+</script>

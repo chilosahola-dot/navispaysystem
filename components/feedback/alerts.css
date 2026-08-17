@@ -1,0 +1,18 @@
+/* ---- Toast / inline alert ---- */
+.toast { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 420px; padding: 14px 16px;
+  background: var(--nv-surface); border: 1px solid var(--nv-border); border-left: 2px solid var(--nv-teal); box-shadow: var(--nv-e-float); }
+.toast p { font-size: 14px; color: var(--nv-text); margin: 0; flex: 1 1 0; }
+.toast .tick { width: 22px; height: 22px; flex: none; border-radius: 50%; background: var(--nv-teal-dark); color: #F3F3F3; display: inline-flex; align-items: center; justify-content: center; }
+.toast .tick .i { width: 13px; height: 13px; stroke-width: 3; }
+.toast-error   { border-left-color: var(--nv-error); }   .toast-error .tick   { background: var(--nv-error); }
+.toast-warning { border-left-color: var(--nv-warning); } .toast-warning .tick { background: var(--nv-warning); }
+.toast-info    { border-left-color: var(--nv-info); }    .toast-info .tick    { background: var(--nv-info); }
+.toast .close { border: 0; background: transparent; color: var(--nv-muted); cursor: pointer; display: inline-flex; padding: 0; flex: none; }
+.toast .close:hover { color: var(--nv-navy); }
+.alert { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border: 1px solid; border-left-width: 2px; font-size: 14px; line-height: 21px; }
+.alert p { margin: 0; flex: 1 1 0; }
+.alert strong { display: block; }
+.alert-error   { background: #FCEEEE; border-color: #EDCFCF; border-left-color: var(--nv-error); color: var(--nv-error); }
+.alert-warning { background: #FBF1E4; border-color: #EBDCC4; border-left-color: var(--nv-warning); color: var(--nv-review-ink); }
+.alert-info    { background: #EAF1F7; border-color: #CFDDE9; border-left-color: var(--nv-info); color: var(--nv-info); }
+.alert-success { background: #E5F1EE; border-color: #C9E0D9; border-left-color: var(--nv-success); color: var(--nv-success); }

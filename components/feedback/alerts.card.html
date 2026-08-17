@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x360" subtitle="Toast and inline alert" name="Alerts & toasts" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./alerts.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;flex-direction:column;gap:12px" id="root"></div>
+<script type="text/babel">
+const { Toast, Alert } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment>
+    <Toast tone="success" onDismiss={() => {}}>Payment PMT-40921 settled.</Toast>
+    <Toast tone="error" onDismiss={() => {}}>Routing failed -- no compliant path.</Toast>
+    <Alert tone="error" title="Three payments were rejected.">Correct the details and resubmit.</Alert>
+    <Alert tone="warning" title="Compliance review pending.">Payments above €250,000 are held until a reviewer signs off.</Alert>
+    <Alert tone="success" title="Batch reconciled.">All 1,284 payments matched their ledger entries.</Alert>
+  </React.Fragment>
+);
+</script>

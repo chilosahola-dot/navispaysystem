@@ -1,0 +1,21 @@
+/* ---- Date picker ---- */
+.cal { width: 340px; max-width: 100%; background: var(--nv-surface); border: 1px solid var(--nv-border); font-family: var(--nv-font); }
+.cal-head { background: var(--nv-navy); color: #F3F3F3; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.cal-over { font-family: var(--nv-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--nv-teal); margin: 0; }
+.cal-day { font-size: 26px; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+.cal-month { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 8px; }
+.cal-month .m { font-size: 14px; font-weight: 600; color: var(--nv-text); }
+.cal-nav { display: flex; gap: 6px; color: var(--nv-muted); }
+.cal-nav button { border: 1px solid transparent; background: transparent; cursor: pointer; color: inherit; display: inline-flex; padding: 4px; }
+.cal-nav button:hover { border-color: var(--nv-border); color: var(--nv-navy); }
+.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 2px; padding: 0 12px 12px; }
+.cal-grid .wd { height: 32px; display: grid; place-items: center; font-family: var(--nv-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--nv-placeholder); }
+.cal-grid .d { height: 38px; display: grid; place-items: center; border: 1px solid transparent; font-size: 14px;
+  color: var(--nv-text); cursor: pointer; background: transparent; font-variant-numeric: tabular-nums; }
+.cal-grid .d:hover { border-color: var(--nv-border); }
+.cal-grid .d.is-out { color: var(--nv-placeholder); }
+.cal-grid .d.is-today { border-color: var(--nv-teal-dark); color: var(--nv-teal-dark); font-weight: 700; }
+.cal-grid .d.is-selected { background: var(--nv-navy); border-color: var(--nv-navy); color: #F3F3F3; }
+.cal-grid .d.has-event { position: relative; }
+.cal-grid .d.has-event::after { content: ""; position: absolute; bottom: 5px; width: 4px; height: 4px; border-radius: 50%; background: var(--nv-teal-dark); }
+.cal-actions { display: flex; justify-content: flex-end; gap: 8px; padding: 0 12px 12px; }

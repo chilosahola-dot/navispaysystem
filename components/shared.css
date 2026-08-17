@@ -1,0 +1,26 @@
+/* ---- Dark band ---- */
+.band-dark { background: var(--nv-dark-bg); color: var(--nv-dark-text);
+  --nv-text: #F1F5F9; --nv-muted: #94A3B8; --nv-border: rgba(243,243,243,.14);
+  --nv-surface: rgba(243,243,243,.04); --nv-fill: rgba(243,243,243,.06); --nv-teal-dark: #00D8B5; }
+
+/* ---- Grid texture ---- */
+.grid-texture { background-image:
+  linear-gradient(var(--nv-border) 1px, transparent 1px),
+  linear-gradient(90deg, var(--nv-border) 1px, transparent 1px);
+  background-size: 32px 32px; background-position: -1px -1px; }
+
+/* ---- HUD corner marks ---- */
+.frame-corners { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.fc { position: absolute; width: 16px; height: 16px; }
+.fc::before, .fc::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--nv-navy); }
+.fc::before { width: 11px; height: 1.5px; transform: translate(-50%,-50%); }
+.fc::after  { width: 1.5px; height: 11px; transform: translate(-50%,-50%); }
+.fc-tl { top: -8.5px; left: -8.5px; } .fc-tr { top: -8.5px; right: -8.5px; }
+.fc-bl { bottom: -8.5px; left: -8.5px; } .fc-br { bottom: -8.5px; right: -8.5px; }
+.band-dark .fc::before, .band-dark .fc::after { background: var(--nv-teal); }
+
+/* ---- Reveal ---- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity var(--nv-reveal) var(--nv-ease), transform var(--nv-reveal) var(--nv-ease); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .08s; } .reveal-delay-2 { transition-delay: .16s; }
+.reveal-delay-3 { transition-delay: .24s; } .reveal-delay-4 { transition-delay: .32s; }

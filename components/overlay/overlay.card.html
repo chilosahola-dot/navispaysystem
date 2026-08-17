@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="700x380" subtitle="Menu, popover, tooltip" name="Overlay" -->
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="./overlay.css">
+<link rel="stylesheet" href="../buttons/buttons.css">
+<link rel="stylesheet" href="../icons/icons.css">
+<script src="../../_ds_bundle.js"></script>
+<div style="padding:20px;font-family:var(--nv-font);background:var(--nv-bg);display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start" id="root"></div>
+<script type="text/babel">
+const { Menu, Popover, Tooltip, Icon } = window.NavisPay;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment>
+    <Menu label="Payment" items={[
+      {icon:'arrow-up-right',label:'Open in ledger'},
+      {icon:'download',label:'Download receipt'},
+      {icon:'refresh',label:'Retry routing',selected:true},
+      {separator:true},
+      {icon:'lock',label:'Amend (settled)',disabled:true},
+      {icon:'trash',label:'Cancel payment',danger:true},
+    ]} />
+    <Popover title="Routing detail" onClose={() => {}} style={{maxWidth:320}}>
+      <p style={{margin:'0 0 12px',color:'var(--nv-muted)'}}>The ledger selected the cheapest compliant path at 09:41:02 UTC.</p>
+    </Popover>
+    <div style={{display:'flex',gap:16}}>
+      <Tooltip label="Opens downward"><Icon name="info" size={18} /></Tooltip>
+      <Tooltip position="right" label="Opens right"><Icon name="info" size={18} /></Tooltip>
+    </div>
+  </React.Fragment>
+);
+</script>
